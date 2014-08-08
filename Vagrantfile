@@ -9,5 +9,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   
   config.vm.network "forwarded_port", guest: 80, host: 8080
   
-  config.vm.provision :shell, path: "bootstrap.sh"
+  config.vm.provision :shell, :path => "bootstrap.sh"
+  config.vm.provision :shell, :path => "install-nginx.sh", :args => ""
+  #https://rvm.io/integration/vagrant
+  config.vm.provision :shell, :path => "install-rvm.sh", :args => "stable"
+  config.vm.provision :shell, :path => "install-ruby.sh", :args => "1.9.3"
 end
