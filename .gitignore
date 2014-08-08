@@ -35,3 +35,6 @@ build/
 
 # Vagrant specifics here
 .vagrant
+
+# Repo specifis here
+public_html
