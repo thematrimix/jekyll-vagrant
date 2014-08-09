@@ -9,9 +9,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   
   config.vm.network "forwarded_port", guest: 80, host: 8080
   
-  config.vm.provision :shell, :path => "bootstrap.sh"
-  config.vm.provision :shell, :path => "install-nginx.sh", :args => ""
-  #https://rvm.io/integration/vagrant
-  config.vm.provision :shell, :path => "install-rvm.sh", :args => "stable"
-  config.vm.provision :shell, :path => "install-ruby.sh", :args => "1.9.3"
+  config.vm.provision :shell, :path => "vagrant/bootstrap.sh"
+  config.vm.provision :shell, :path => "vagrant/install-nginx.sh"
+  config.vm.provision :shell, :path => "vagrant/install-rvm.sh", :args => "stable"
+  #config.vm.provision :shell, :path => "vagrant/install-ruby.sh", :args => "2.1 jekyll"
+  #config.vm.provision :shell, :path => "vagrant/install-nvm.sh"
+  #config.vm.provision :shell, :path => "vagrant/cleanup.sh"
 end
