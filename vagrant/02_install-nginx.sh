@@ -13,7 +13,7 @@ fi
 if [ -f /etc/nginx/sites-available/default ]; then
 	echo ">>>>>Mapping new root path<<<<<"
 	#This will change once I actually get jekyll going as I think it is _site
-	sed -ri 's|/usr/share/nginx/html|/vagrant/public_html|' /etc/nginx/sites-available/default
+	sed -ri 's|/usr/share/nginx/html|/vagrant/_site|' /etc/nginx/sites-available/default
 
 	echo ">>>>>Restarting Nginx<<<<<"
 	service nginx restart
