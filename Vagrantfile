@@ -17,5 +17,5 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 	config.vm.provision :shell, :path => "vagrant/06_pre-install-nvm.sh"
 	config.vm.provision :shell, :path => "vagrant/07_user-install-nvm.sh", :args => "v0.13.1", :privileged => false
 	config.vm.provision :shell, :path => "vagrant/08_user-install-node.sh",:args => "0.11.13", :privileged => false
-	config.vm.provision :shell, :path => "vagrant/cleanup.sh"
+	config.vm.provision :shell, :path => "vagrant/99_cleanup.sh"
 end
