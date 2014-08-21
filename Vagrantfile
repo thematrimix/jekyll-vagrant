@@ -15,9 +15,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 	config.vm.provision :shell, :path => "provision/04_user-install-ruby.sh", :args => "2.1 jekyll", :privileged => false
 	config.vm.provision :shell, :path => "provision/05_pre-install-nvm.sh"
 	config.vm.provision :shell, :path => "provision/06_user-install-nvm.sh", :args => "v0.13.1", :privileged => false
-	config.vm.provision :shell, :path => "provision/07_user-install-node.sh",:args => "0.11.13", :privileged => false
-	config.vm.provision :shell, :path => "provision/08_install-nginx.sh"
-	config.vm.provision :shell, :path => "provision/09_create_jekyll_site.sh"
+	config.vm.provision :shell, :path => "provision/07_user-install-node.sh", :args => "0.11.13", :privileged => false
+	config.vm.provision :shell, :path => "provision/08_user_create_jekyll_site.sh", :args => "giant-snail.mooo.com", :privileged => false
+	config.vm.provision :shell, :path => "provision/09_install-nginx.sh", :args => "giant-snail.mooo.com"
 	#config.vm.provision :shell, :path => "provision/10_kickoff.sh"
 	config.vm.provision :shell, :path => "provision/99_cleanup.sh"
 end
