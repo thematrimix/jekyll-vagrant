@@ -8,7 +8,9 @@ type jekyll >/dev/null 2>&1
 if [ $? -ne 0 ] && (( $# )); then
 	if [ ! -d /vagrant/$1 ]; then
 		echo ">>>>>Initializing your new jekyll site<<<<<"
-		jekyll new /vagrant/$1
+		cd /vagrant
+		jekyll new $1
+		cd ~
 		#now for the tricky thing
 		#jekyll by default adds a gitignore at the top level specificity to ignore the _site directory
 		#so delete it as we need to keep _site around even if we check it in say to github

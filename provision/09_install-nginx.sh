@@ -25,7 +25,7 @@ if [ -f /etc/nginx/sites-available/default ] && (( $# )); then
 			printf "*\n\n!.gitignore\n" > /vagrant/$1/_site/.gitignore
 		fi
 		
-		if [ ! -f /etc/nginx/sites-available/$1 ]
+		if [ ! -f /etc/nginx/sites-available/$1 ]; then
 			#actually create the config for the site
 			cp /etc/nginx/sites-available/default /etc/nginx/sites-available/$1
 			#Replace the root mapping of default to our new jekyll site
