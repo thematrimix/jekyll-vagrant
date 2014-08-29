@@ -4,7 +4,7 @@
 
 type jekyll >/dev/null 2>&1
 
-if [ $? -ne 0 ] && (( $# )); then
+if [ $? -eq 0 ] && (( $# )); then
 	if [ ! -d /vagrant/$1 ]; then
 		echo ">>>>>Initializing your new jekyll site<<<<<"
 		cd /vagrant
